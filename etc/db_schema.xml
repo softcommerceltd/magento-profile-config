@@ -1,0 +1,34 @@
+<?xml version="1.0"?>
+<!--
+ ~ Copyright © Soft Commerce Ltd. All rights reserved.
+ ~ See LICENSE.txt for license details.
+-->
+<schema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Setup/Declaration/Schema/etc/schema.xsd">
+    <table name="softcommerce_profile_config" resource="default" engine="innodb">
+        <column xsi:type="int" name="entity_id" padding="10" unsigned="true" nullable="false" identity="true"
+                comment="Entity ID"/>
+        <column xsi:type="int" name="parent_id" padding="10" unsigned="true" nullable="true" identity="false"
+                comment="Parent ID"/>
+        <column xsi:type="varchar" name="scope" nullable="false" length="8" default="default"
+                comment="Scope"/>
+        <column xsi:type="int" name="scope_id" padding="11" unsigned="false" nullable="false" identity="false" default="0"
+                comment="Scope ID"/>
+        <column xsi:type="varchar" name="path" nullable="false" length="255" default="general"
+                comment="Path"/>
+        <column xsi:type="longtext" name="value" nullable="true"
+                comment="Value"/>
+        <constraint xsi:type="primary" referenceId="PRIMARY">
+            <column name="entity_id"/>
+        </constraint>
+        <constraint xsi:type="foreign" referenceId="SOFTCOMMERCE_PROFILE_CONFIG_PARENT_ID_SOFTCOMMERCE_PROFILE_ENTITY_ENTITY_ID"
+                    table="softcommerce_profile_config" column="parent_id"
+                    referenceTable="softcommerce_profile_entity" referenceColumn="entity_id"
+                    onDelete="CASCADE"/>
+        <constraint xsi:type="unique" referenceId="SOFTCOMMERCE_PROFILE_CONFIG_PARENT_ID_SCOPE_SCOPE_ID_PATH">
+            <column name="parent_id"/>
+            <column name="scope"/>
+            <column name="scope_id"/>
+            <column name="path"/>
+        </constraint>
+    </table>
+</schema>

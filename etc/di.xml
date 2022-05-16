@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<!--
+ ~ Copyright © Soft Commerce Ltd. All rights reserved.
+ ~ See LICENSE.txt for license details.
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <!-- profile config global ::: interface | repository | management -->
+    <preference for="SoftCommerce\ProfileConfig\Api\Data\ConfigInterface" type="SoftCommerce\ProfileConfig\Model\Config"/>
+    <preference for="SoftCommerce\ProfileConfig\Api\Data\ConfigSearchResultsInterface" type="Magento\Framework\Api\SearchResults"/>
+    <preference for="SoftCommerce\ProfileConfig\Api\ConfigRepositoryInterface" type="SoftCommerce\ProfileConfig\Model\ConfigRepository"/>
+    <preference for="SoftCommerce\ProfileConfig\Model\ConfigScopeInterface" type="SoftCommerce\ProfileConfig\Model\ConfigScope"/>
+    <preference for="SoftCommerce\ProfileConfig\Model\ConfigScopeWriterInterface" type="SoftCommerce\ProfileConfig\Model\ConfigScopeWriter"/>
+    <preference for="SoftCommerce\ProfileConfig\Model\GetProfileConfigValueByPathInterface" type="SoftCommerce\ProfileConfig\Model\GetProfileConfigValueByPath"/>
+    <preference for="SoftCommerce\ProfileConfig\Model\GetProfileIdByConfigConditionInterface" type="SoftCommerce\ProfileConfig\Model\GetProfileIdByConfigCondition"/>
+    <preference for="SoftCommerce\ProfileConfig\Model\ResourceModel\GetConfigDataInterface" type="SoftCommerce\ProfileConfig\Model\ResourceModel\GetConfigDataCache"/>
+    <!-- profile type instance ::: configs -->
+    <preference for="SoftCommerce\ProfileConfig\Model\Config\EventConfigInterface" type="SoftCommerce\ProfileConfig\Model\Config\EventConfig"/>
+    <preference for="SoftCommerce\ProfileConfig\Model\Config\LogConfigInterface" type="SoftCommerce\ProfileConfig\Model\Config\LogConfig"/>
+</config>

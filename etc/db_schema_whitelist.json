@@ -1,0 +1,17 @@
+{
+    "softcommerce_profile_config": {
+        "column": {
+            "entity_id": true,
+            "parent_id": true,
+            "scope": true,
+            "scope_id": true,
+            "path": true,
+            "value": true
+        },
+        "constraint": {
+            "PRIMARY": true,
+            "FK_4314FD595E8E59268BB22F099F3D7002": true,
+            "SOFTCOMMERCE_PROFILE_CONFIG_PARENT_ID_SCOPE_SCOPE_ID_PATH": true
+        }
+    }
+}
