@@ -19,12 +19,19 @@ interface LogConfigInterface extends ConfigInterface
 {
     public const ENTITY = 'log_config';
 
-    // Even config paths
+    // Log config paths
     public const XML_PATH_IS_ACTIVE_REQUEST_LOG = '/log_config/is_active_request_log';
+    public const XML_PATH_IS_ACTIVE_RESPONSE_LOG = '/log_config/is_active_response_log';
 
     /**
      * @return bool
      * @throws LocalizedException
      */
     public function isActiveRequestLog(): bool;
+
+    /**
+     * @return bool
+     * @throws LocalizedException
+     */
+    public function isActiveResponseLog(): bool;
 }
