@@ -1,5 +1,8 @@
 ## Changelog
 
+### Version 1.1.1
+- **Enhancement**: Changes to PDT.
+
 ### Version 1.1.0
 - **Compatibility**: Compatibility with Magento Open Source 2.4.3 [#2]
 - **Enhancement**: Integration Tests [#1]
