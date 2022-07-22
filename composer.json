@@ -3,8 +3,7 @@
     "description": "SoftCommerce -- Magento: Profile Config Module.",
     "require": {
         "php": "~7.4.0||~8.0.0||~8.1.0",
-        "softcommerce/module-profile": "*",
-        "magento/magento-composer-installer": "*"
+        "softcommerce/module-profile": "*"
     },
     "type": "magento2-module",
     "license": "EULA",
@@ -16,5 +15,5 @@
             "SoftCommerce\\ProfileConfig\\": ""
         }
     },
-    "version": "1.2.1"
+    "version": "1.2.2"
 }
