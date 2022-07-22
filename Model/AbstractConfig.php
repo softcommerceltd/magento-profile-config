@@ -23,6 +23,7 @@ use SoftCommerce\Profile\Model\GetProfileTypeIdInterface;
 class AbstractConfig extends DataObject
 {
     public const MAGENTO_ATTRIBUTE = 'magento_attribute';
+    public const CLIENT_ATTRIBUTE = 'client_attribute';
     public const PLENTY_ATTRIBUTE = 'plenty_attribute';
 
     protected $context;
@@ -176,8 +177,9 @@ class AbstractConfig extends DataObject
     {
         $result = [];
         foreach ($dataMap as $item) {
-            if (isset($item[self::MAGENTO_ATTRIBUTE], $item[self::PLENTY_ATTRIBUTE])) {
-                $result[$item[self::MAGENTO_ATTRIBUTE]] = $item[self::PLENTY_ATTRIBUTE];
+            if (isset($item[self::MAGENTO_ATTRIBUTE])) {
+                $result[$item[self::MAGENTO_ATTRIBUTE]] = $item[self::CLIENT_ATTRIBUTE]
+                    ?? ($item[self::PLENTY_ATTRIBUTE] ?? null);
             }
         }
 

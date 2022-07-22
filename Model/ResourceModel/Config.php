@@ -37,8 +37,8 @@ class Config extends AbstractResource
         $adapter = $this->getConnection();
         $select = $adapter->select()
             ->from($this->getMainTable(), $cols)
-            ->where(ConfigInterface::PARENT_ID.' = ?', $profileId)
-            ->where(ConfigInterface::PATH.' = ?', $path);
+            ->where(ConfigInterface::PARENT_ID . ' = ?', $profileId)
+            ->where(ConfigInterface::PATH . ' = ?', $path);
 
         return $adapter->fetchRow($select);
     }
@@ -80,7 +80,7 @@ class Config extends AbstractResource
         $connection = $this->getConnection();
         $select = $connection->select()
             ->from($this->getMainTable(), $cols)
-            ->where(ConfigInterface::PATH.' = ?', $path);
+            ->where(ConfigInterface::PATH . ' = ?', $path);
 
         return $connection->fetchAll($select);
     }
