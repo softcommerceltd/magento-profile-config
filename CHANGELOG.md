@@ -1,5 +1,8 @@
 ## Changelog
 
+### Version 1.0.3
+- **Compatibility**: Compatibility with Magento Extension Quality Program (EQP).
+
 ### Version 1.0.2
 - **Enhancement**: Changes to PDT.
 
