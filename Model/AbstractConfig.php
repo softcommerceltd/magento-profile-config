@@ -26,8 +26,6 @@ class AbstractConfig extends DataObject
     public const CLIENT_ATTRIBUTE = 'client_attribute';
     public const PLENTY_ATTRIBUTE = 'plenty_attribute';
 
-    protected $context;
-
     /**
      * @var ConfigScopeInterface
      */
@@ -139,7 +137,7 @@ class AbstractConfig extends DataObject
      * @return array
      * @throws LocalizedException
      */
-    protected function getConfigDataSerialized(
+    public function getConfigDataSerialized(
         string $xmlPath,
         $store = null,
         string $scope = ScopeConfigInterface::SCOPE_TYPE_DEFAULT
