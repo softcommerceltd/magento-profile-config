@@ -1,5 +1,8 @@
 ## Changelog
 
+### Version 1.2.3
+- **Enhancement**: Improvements to config data provider.
+
 ### Version 1.2.2
 - **Compatibility**: Compatibility with Magento Extension Quality Program (EQP).
 
