@@ -1,5 +1,8 @@
 ## Changelog
 
+### Version 1.2.4
+- **Enhancement**: Changed `SoftCommerce\ProfileConfig\Model\AbstractConfig::getTypeId` to public to allow other modules access this method.
+
 ### Version 1.2.3
 - **Enhancement**: Improvements to config data provider.
 

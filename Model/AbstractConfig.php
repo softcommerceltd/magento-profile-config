@@ -159,7 +159,7 @@ class AbstractConfig extends DataObject
      * @return string
      * @throws LocalizedException
      */
-    protected function getTypeId(): string
+    public function getTypeId(): string
     {
         if (!isset($this->typeIdInMemory[$this->getProfileId()])) {
             $this->typeIdInMemory[$this->getProfileId()] = $this->getProfileTypeId->execute($this->getProfileId());
