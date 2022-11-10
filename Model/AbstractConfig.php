@@ -29,37 +29,37 @@ class AbstractConfig extends DataObject
     /**
      * @var ConfigScopeInterface
      */
-    protected $configScope;
+    protected ConfigScopeInterface $configScope;
 
     /**
      * @var CollectionFactory
      */
-    protected $dataCollectionFactory;
+    protected CollectionFactory $dataCollectionFactory;
 
     /**
      * @var DataObjectFactory
      */
-    protected $dataObjectFactory;
+    protected DataObjectFactory $dataObjectFactory;
 
     /**
      * @var GetProfileTypeIdInterface
      */
-    protected $getProfileTypeId;
+    protected GetProfileTypeIdInterface $getProfileTypeId;
 
     /**
      * @var int|null
      */
-    protected $profileId;
+    protected ?int $profileId;
 
     /**
      * @var SerializerInterface
      */
-    protected $serializer;
+    protected SerializerInterface $serializer;
 
     /**
      * @var string[]
      */
-    private $typeIdInMemory;
+    private array $typeIdInMemory = [];
 
     /**
      * @param ConfigScopeInterface $configScope

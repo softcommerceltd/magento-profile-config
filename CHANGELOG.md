@@ -1,5 +1,8 @@
 ## Changelog
 
+### Version 1.2.5
+- **Compatibility**: Compatibility with Magento [OS/AC] 2.4.5 and PHP 8
+
 ### Version 1.2.4
 - **Enhancement**: Changed `SoftCommerce\ProfileConfig\Model\AbstractConfig::getTypeId` to public to allow other modules access this method.
 

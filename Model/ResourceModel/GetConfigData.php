@@ -19,7 +19,7 @@ class GetConfigData implements GetConfigDataInterface
     /**
      * @var ResourceConnection
      */
-    private $resource;
+    private ResourceConnection $resource;
 
     /**
      * @param ResourceConnection $resource

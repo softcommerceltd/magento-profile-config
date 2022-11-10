@@ -16,12 +16,12 @@ class GetConfigDataCache implements GetConfigDataInterface
     /**
      * @var array
      */
-    private $cache = [];
+    private array $cache = [];
 
     /**
      * @var GetConfigData
      */
-    private $resource;
+    private GetConfigData $resource;
 
     /**
      * @param GetConfigData $resource
