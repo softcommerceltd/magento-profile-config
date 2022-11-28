@@ -6,7 +6,10 @@
         "softcommerce/module-profile": "*"
     },
     "type": "magento2-module",
-    "license": "EULA",
+    "license": [
+        "OSL-3.0",
+        "AFL-3.0"
+    ],
     "autoload": {
         "files": [
             "registration.php"
@@ -15,5 +18,5 @@
             "SoftCommerce\\ProfileConfig\\": ""
         }
     },
-    "version": "1.2.5"
+    "version": "1.2.6"
 }
