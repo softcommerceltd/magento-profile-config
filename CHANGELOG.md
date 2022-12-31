@@ -1,5 +1,8 @@
 ## Changelog
 
+### Version 1.2.7
+- **Fix**: Applied a fix to `SoftCommerce\ProfileConfig\Model\AbstractConfig::getConfigDataSerialized` where return type must be an array.
+
 ### Version 1.2.6
 - **Fix**: Applied a fix to composer.json license compatibility.
 

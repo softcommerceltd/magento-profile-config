@@ -152,7 +152,7 @@ class AbstractConfig extends DataObject
             $data = [];
         }
 
-        return $data;
+        return is_array($data) ? $data : [$data];
     }
 
     /**
