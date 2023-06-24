@@ -18,4 +18,13 @@
     <!-- profile type instance ::: configs -->
     <preference for="SoftCommerce\ProfileConfig\Model\Config\EventConfigInterface" type="SoftCommerce\ProfileConfig\Model\Config\EventConfig"/>
     <preference for="SoftCommerce\ProfileConfig\Model\Config\LogConfigInterface" type="SoftCommerce\ProfileConfig\Model\Config\LogConfig"/>
+    <!-- CLI -->
+    <type name="Magento\Framework\Console\CommandListInterface">
+        <arguments>
+            <argument name="commands" xsi:type="array">
+                <item name="profile_config_export" xsi:type="object">SoftCommerce\ProfileConfig\Console\Command\ExportConfigData</item>
+                <item name="profile_config_import" xsi:type="object">SoftCommerce\ProfileConfig\Console\Command\ImportConfigData</item>
+            </argument>
+        </arguments>
+    </type>
 </config>
