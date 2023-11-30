@@ -14,6 +14,7 @@ use Magento\Framework\DataObject;
 use Magento\Framework\DataObjectFactory;
 use Magento\Framework\Exception\LocalizedException;
 use Magento\Framework\Serialize\SerializerInterface;
+use SoftCommerce\Core\Framework\DataStorageInterfaceFactory;
 use SoftCommerce\Profile\Model\GetProfileTypeIdInterface;
 
 /**
@@ -42,6 +43,11 @@ class AbstractConfig extends DataObject
     protected DataObjectFactory $dataObjectFactory;
 
     /**
+     * @var DataStorageInterfaceFactory
+     */
+    protected DataStorageInterfaceFactory $dataStorageFactory;
+
+    /**
      * @var GetProfileTypeIdInterface
      */
     protected GetProfileTypeIdInterface $getProfileTypeId;
@@ -65,6 +71,7 @@ class AbstractConfig extends DataObject
      * @param ConfigScopeInterface $configScope
      * @param CollectionFactory $dataCollectionFactory
      * @param DataObjectFactory $dataObjectFactory
+     * @param DataStorageInterfaceFactory $dataStorageFactory
      * @param GetProfileTypeIdInterface $getProfileTypeId
      * @param SerializerInterface $serializer
      * @param array $data
@@ -74,6 +81,7 @@ class AbstractConfig extends DataObject
         ConfigScopeInterface $configScope,
         CollectionFactory $dataCollectionFactory,
         DataObjectFactory $dataObjectFactory,
+        DataStorageInterfaceFactory $dataStorageFactory,
         GetProfileTypeIdInterface $getProfileTypeId,
         SerializerInterface $serializer,
         array $data = [],
@@ -82,6 +90,7 @@ class AbstractConfig extends DataObject
         $this->configScope = $configScope;
         $this->dataCollectionFactory = $dataCollectionFactory;
         $this->dataObjectFactory = $dataObjectFactory;
+        $this->dataStorageFactory = $dataStorageFactory;
         $this->getProfileTypeId = $getProfileTypeId;
         $this->serializer = $serializer;
         $this->profileId = $profileId;

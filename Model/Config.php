@@ -12,7 +12,6 @@ use Magento\Framework\DataObject\IdentityInterface;
 use Magento\Framework\Model\AbstractModel;
 use Magento\Framework\Event\ManagerInterface;
 use SoftCommerce\ProfileConfig\Api\Data\ConfigInterface;
-use SoftCommerce\ProfileConfig\Model\ResourceModel;
 
 /**
  * @inheritDoc
