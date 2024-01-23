@@ -17,7 +17,6 @@ use SoftCommerce\ProfileConfig\Api\Data\ConfigInterface;
 use SoftCommerce\ProfileConfig\Api\Data\ConfigSearchResultsInterface;
 use SoftCommerce\ProfileConfig\Api\Data\ConfigSearchResultsInterfaceFactory;
 use SoftCommerce\ProfileConfig\Api\ConfigRepositoryInterface;
-use SoftCommerce\ProfileConfig\Model\ResourceModel;
 
 /**
  * @inheritDoc
@@ -27,27 +26,27 @@ class ConfigRepository implements ConfigRepositoryInterface
     /**
      * @var ResourceModel\Config
      */
-    private $resource;
+    private ResourceModel\Config $resource;
 
     /**
      * @var ConfigFactory
      */
-    private $modelFactory;
+    private ConfigFactory $modelFactory;
 
     /**
      * @var ResourceModel\Config\CollectionFactory
      */
-    private $collectionFactory;
+    private ResourceModel\Config\CollectionFactory $collectionFactory;
 
     /**
      * @var CollectionProcessorInterface
      */
-    private $collectionProcessor;
+    private CollectionProcessorInterface $collectionProcessor;
 
     /**
-     * @var ConfigSearchResultsInterface
+     * @var ConfigSearchResultsInterfaceFactory
      */
-    private $searchResultsFactory;
+    private ConfigSearchResultsInterfaceFactory $searchResultsFactory;
 
     /**
      * @param ResourceModel\Config $resource

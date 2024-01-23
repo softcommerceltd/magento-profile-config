@@ -18,12 +18,12 @@ class GetProfileConfigValueByPath implements GetProfileConfigValueByPathInterfac
     /**
      * @var array
      */
-    private $data;
+    private array $data = [];
 
     /**
      * @var ResourceModel\Config
      */
-    private $resource;
+    private ResourceModel\Config $resource;
 
     /**
      * @param ResourceModel\Config $resource

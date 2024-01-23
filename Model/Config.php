@@ -43,7 +43,7 @@ class Config extends AbstractModel implements ConfigInterface, IdentityInterface
     /**
      * @inheritDoc
      */
-    protected function _construct()
+    protected function _construct(): void
     {
         $this->_init(ResourceModel\Config::class);
     }

@@ -20,7 +20,7 @@ class Config extends AbstractResource
     /**
      * @inheritDoc
      */
-    protected function _construct()
+    protected function _construct(): void
     {
         $this->_init(ConfigInterface::DB_TABLE_NAME, ConfigInterface::ENTITY_ID);
     }

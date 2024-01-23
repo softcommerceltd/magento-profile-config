@@ -67,7 +67,7 @@ class ImportConfigData extends Command
     /**
      * @inheritDoc
      */
-    protected function configure()
+    protected function configure(): void
     {
         $this->setName(self::COMMAND_NAME)
             ->setDescription('Import profile configuration data.')

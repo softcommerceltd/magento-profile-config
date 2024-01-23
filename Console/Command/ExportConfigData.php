@@ -74,7 +74,7 @@ class ExportConfigData extends Command
     /**
      * @inheritDoc
      */
-    protected function configure()
+    protected function configure(): void
     {
         $this->setName(self::COMMAND_NAME)
             ->setDescription('Export profile configuration data.')
