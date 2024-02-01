@@ -20,17 +20,17 @@ class ConfigScopeWriter implements ConfigScopeWriterInterface
     /**
      * @var ConfigScopeInterface
      */
-    private $configScope;
+    private ConfigScopeInterface $configScope;
 
     /**
      * @var ResourceModel\Config
      */
-    private $resource;
+    private ResourceModel\Config $resource;
 
     /**
      * @var SerializerInterface
      */
-    private $serializer;
+    private SerializerInterface $serializer;
 
     /**
      * @param ConfigScopeInterface $configScope
@@ -53,10 +53,11 @@ class ConfigScopeWriter implements ConfigScopeWriterInterface
     public function save(
         int $profileId,
         string $path,
-        $value,
+        mixed $value,
         string $scope = ScopeConfigInterface::SCOPE_TYPE_DEFAULT,
         int $scopeId = 0
-    ): void {
+    ): void
+    {
         if (is_array($value)) {
             try {
                 $this->serializer->serialize($value);
@@ -99,7 +100,8 @@ class ConfigScopeWriter implements ConfigScopeWriterInterface
         string $path,
         string $scope = ScopeConfigInterface::SCOPE_TYPE_DEFAULT,
         int $scopeId = 0
-    ): void {
+    ): void
+    {
         $this->resource->remove(
             [
                 ConfigInterface::PARENT_ID . ' = ?' => $profileId,

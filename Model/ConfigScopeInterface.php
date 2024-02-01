@@ -26,7 +26,7 @@ interface ConfigScopeInterface
      * @param int $profileId
      * @param string|null $path
      * @param string $scope
-     * @param string|int|null $scopeCode
+     * @param int|string|null $scopeCode
      * @return array|string|int|mixed|null
      * @throws \Exception
      */
@@ -34,11 +34,18 @@ interface ConfigScopeInterface
         int $profileId,
         ?string $path = null,
         string $scope = ScopeConfigInterface::SCOPE_TYPE_DEFAULT,
-        $scopeCode = null
-    );
+        int|string|null $scopeCode = null
+    ): mixed;
 
     /**
      * @return void
      */
     public function clean(): void;
+
+    /**
+     * @param string $path
+     * @return array|int|string|mixed|null
+     * @throws \Exception
+     */
+    public function getConfigData(string $path = ''): mixed;
 }

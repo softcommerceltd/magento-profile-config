@@ -12,7 +12,6 @@ use Magento\Framework\Exception\LocalizedException;
 use Magento\Framework\Registry;
 use Magento\Store\Api\Data\StoreInterface;
 use SoftCommerce\Profile\Api\Data\ProfileInterface;
-use SoftCommerce\Profile\Model\Profile;
 
 /**
  * @inheritDoc
@@ -22,17 +21,17 @@ class RegistryLocator implements RegistryLocatorInterface
     /**
      * @var Registry
      */
-    private $registry;
+    private Registry $registry;
 
     /**
-     * @var ProfileInterface
+     * @var ProfileInterface|null
      */
-    private $profile;
+    private ?ProfileInterface $profile = null;
 
     /**
-     * @var StoreInterface
+     * @var StoreInterface|null
      */
-    private $store;
+    private ?StoreInterface $store = null;
 
     /**
      * @param Registry $registry
@@ -43,10 +42,10 @@ class RegistryLocator implements RegistryLocatorInterface
     }
 
     /**
-     * @return ProfileInterface|Profile
+     * @return ProfileInterface
      * @throws LocalizedException
      */
-    public function getProfile()
+    public function getProfile(): ProfileInterface
     {
         if (null !== $this->profile) {
             return $this->profile;
@@ -60,10 +59,10 @@ class RegistryLocator implements RegistryLocatorInterface
     }
 
     /**
-     * @return StoreInterface|mixed|null
+     * @return StoreInterface
      * @throws LocalizedException
      */
-    public function getStore()
+    public function getStore(): StoreInterface
     {
         if (null !== $this->store) {
             return $this->store;

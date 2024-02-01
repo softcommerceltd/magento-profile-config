@@ -37,7 +37,7 @@ interface ConfigInterface
      * @param int $parentId
      * @return $this
      */
-    public function setParentId(int $parentId);
+    public function setParentId(int $parentId): static;
 
     /**
      * @return string|null
@@ -48,7 +48,7 @@ interface ConfigInterface
      * @param string $scope
      * @return $this
      */
-    public function setScope(string $scope);
+    public function setScope(string $scope): static;
 
     /**
      * @return int|null
@@ -59,7 +59,7 @@ interface ConfigInterface
      * @param int $scopeId
      * @return $this
      */
-    public function setScopeId(int $scopeId);
+    public function setScopeId(int $scopeId): static;
 
     /**
      * @return string|null
@@ -70,7 +70,7 @@ interface ConfigInterface
      * @param string $path
      * @return $this
      */
-    public function setPath(string $path);
+    public function setPath(string $path): static;
 
     /**
      * @return string|null
@@ -81,5 +81,5 @@ interface ConfigInterface
      * @param string|int|mixed $value
      * @return $this
      */
-    public function setValue($value);
+    public function setValue($value): static;
 }

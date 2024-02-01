@@ -113,7 +113,7 @@ class AbstractConfig extends DataObject
      * @param int $profileId
      * @return $this
      */
-    public function setProfileId(int $profileId)
+    public function setProfileId(int $profileId): static
     {
         $this->profileId = $profileId;
         return $this;
@@ -130,7 +130,8 @@ class AbstractConfig extends DataObject
         string $xmlPath,
         $store = null,
         string $scope = ScopeConfigInterface::SCOPE_TYPE_DEFAULT
-    ) {
+    ): mixed
+    {
         $indexKey = $this->getIndexKey($xmlPath, $store, $scope);
         if (!$this->hasData($indexKey)) {
             $this->setData($indexKey, $this->configScope->get($this->getProfileId(), $xmlPath, $scope, $store));

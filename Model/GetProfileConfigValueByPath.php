@@ -8,8 +8,6 @@ declare(strict_types=1);
 
 namespace SoftCommerce\ProfileConfig\Model;
 
-use SoftCommerce\ProfileConfig\Model\ResourceModel;
-
 /**
  * @inheritDoc
  */

@@ -30,57 +30,57 @@ class ConfigScope implements ConfigScopeInterface
     /**
      * @var CacheInterface
      */
-    private $cache;
+    private CacheInterface $cache;
 
     /**
      * @var Converter
      */
-    private $converter;
+    private Converter $converter;
 
     /**
      * @var array
      */
-    private $data = [];
+    private array $data = [];
 
     /**
-     * @var array
+     * @var array|null
      */
-    private $dataScopes;
+    private ?array $dataScopes = null;
 
     /**
      * @var Encryptor
      */
-    private $encryptor;
+    private Encryptor $encryptor;
 
     /**
      * @var Fallback
      */
-    private $fallback;
+    private Fallback $fallback;
 
     /**
      * @var GetConfigDataInterface
      */
-    private $getConfigData;
+    private GetConfigDataInterface $getConfigData;
 
     /**
      * @var LockGuardedCacheLoader
      */
-    private $lockQuery;
+    private LockGuardedCacheLoader $lockQuery;
 
     /**
      * @var int|null
      */
-    private $profileId;
+    private ?int $profileId = null;
 
     /**
      * @var ScopeCodeResolver
      */
-    private $scopeCodeResolver;
+    private ScopeCodeResolver $scopeCodeResolver;
 
     /**
      * @var SerializerInterface
      */
-    private $serializer;
+    private SerializerInterface $serializer;
 
     /**
      * @param CacheInterface $cache
@@ -119,8 +119,9 @@ class ConfigScope implements ConfigScopeInterface
         int $profileId,
         ?string $path = null,
         string $scope = ScopeConfigInterface::SCOPE_TYPE_DEFAULT,
-        $scopeCode = null
-    ) {
+        int|string|null $scopeCode = null
+    ): mixed
+    {
         $this->setProfileId($profileId);
         return $this->getConfigData($this->generatePath($scope, $path, $scopeCode));
     }
@@ -143,11 +144,9 @@ class ConfigScope implements ConfigScopeInterface
     }
 
     /**
-     * @param string $path
-     * @return array|int|string|mixed|null
-     * @throws \Exception
+     * @inheritDoc
      */
-    public function getConfigData(string $path = '')
+    public function getConfigData(string $path = ''): mixed
     {
         if ($path === '') {
             $this->data[$this->getProfileId()] = array_replace_recursive(
@@ -164,7 +163,7 @@ class ConfigScope implements ConfigScopeInterface
      * @return array|mixed|null
      * @throws \Exception
      */
-    private function getData()
+    private function getData(): mixed
     {
         $dataLoader = function () {
             if ($data = $this->cache->load($this->getCacheId())) {
@@ -186,7 +185,7 @@ class ConfigScope implements ConfigScopeInterface
      * @return array|string|int|mixed|null
      * @throws \Exception
      */
-    private function getDataByPath(string $path)
+    private function getDataByPath(string $path): mixed
     {
         $path = explode('/', $path);
         if (count($path) === 1 && current($path) !== ScopeInterface::SCOPE_DEFAULT) {
@@ -227,10 +226,10 @@ class ConfigScope implements ConfigScopeInterface
     /**
      * @param string $scope
      * @param null $scopeId
-     * @return array
+     * @return mixed
      * @throws \Exception
      */
-    private function getDataByScope(string $scope, $scopeId = null)
+    private function getDataByScope(string $scope, $scopeId = null): mixed
     {
         if (null === $scopeId) {
             $dataLoader = function () use ($scope) {
@@ -272,7 +271,7 @@ class ConfigScope implements ConfigScopeInterface
      * @param $pathKeys
      * @return array|string|int|mixed|null
      */
-    private function getDataByPathKeys($data, $pathKeys)
+    private function getDataByPathKeys($data, $pathKeys): mixed
     {
         foreach ($pathKeys as $key) {
             if ((array) $data === $data && isset($data[$key])) {
@@ -415,7 +414,7 @@ class ConfigScope implements ConfigScopeInterface
      * @param int $profileId
      * @return $this
      */
-    private function setProfileId(int $profileId): ConfigScope
+    private function setProfileId(int $profileId): static
     {
         $this->profileId = $profileId;
         return $this;

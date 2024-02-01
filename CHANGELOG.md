@@ -1,11 +1,14 @@
 ## Changelog
 
+### Version 1.2.10
+- **Enhancement**: General codebase improvements [#3]
+
 ### Version 1.2.9
 - **Compatibility**: Add compatibility for Magento 2.4.6-p3 and Magento 2.4.7
 
 ### Version 1.2.8
-- **Compatibility**: Add compatibility for PHP 8.2 and Magento 2.4.6-p1 #2
-- **Enhancement**: Ability to export / import profile config data. #1
+- **Compatibility**: Add compatibility for PHP 8.2 and Magento 2.4.6-p1 [#2]
+- **Enhancement**: Ability to export / import profile config data. [#1]
 
 ### Version 1.2.7
 - **Fix**: Applied a fix to `SoftCommerce\ProfileConfig\Model\AbstractConfig::getConfigDataSerialized` where return type must be an array.

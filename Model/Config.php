@@ -75,7 +75,7 @@ class Config extends AbstractModel implements ConfigInterface, IdentityInterface
     /**
      * @inheritDoc
      */
-    public function setParentId(int $parentId)
+    public function setParentId(int $parentId): static
     {
         $this->setData(self::PARENT_ID, $parentId);
         return $this;
@@ -92,7 +92,7 @@ class Config extends AbstractModel implements ConfigInterface, IdentityInterface
     /**
      * @inheritDoc
      */
-    public function setScope(string $scope)
+    public function setScope(string $scope): static
     {
         $this->setData(self::SCOPE, $scope);
         return $this;
@@ -109,7 +109,7 @@ class Config extends AbstractModel implements ConfigInterface, IdentityInterface
     /**
      * @inheritDoc
      */
-    public function setScopeId(int $scopeId)
+    public function setScopeId(int $scopeId): static
     {
         $this->setData(self::SCOPE_ID, $scopeId);
         return $this;
@@ -126,7 +126,7 @@ class Config extends AbstractModel implements ConfigInterface, IdentityInterface
     /**
      * @inheritDoc
      */
-    public function setPath(string $path)
+    public function setPath(string $path): static
     {
         $this->setData(self::PATH, $path);
         return $this;
@@ -143,7 +143,7 @@ class Config extends AbstractModel implements ConfigInterface, IdentityInterface
     /**
      * @inheritDoc
      */
-    public function setValue($value)
+    public function setValue($value): static
     {
         $this->setData(self::VALUE, $value);
         return $this;

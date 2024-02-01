@@ -116,7 +116,6 @@ class ExportConfigData extends Command
                         $filename
                     )
                 );
-
             } else {
                 $output->writeln('<comment>Could not find applicable profiles.</comment>');
             }

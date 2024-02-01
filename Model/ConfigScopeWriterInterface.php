@@ -29,7 +29,7 @@ interface ConfigScopeWriterInterface
     public function save(
         int $profileId,
         string $path,
-        $value,
+        mixed $value,
         string $scope = ScopeConfigInterface::SCOPE_TYPE_DEFAULT,
         int $scopeId = 0
     ): void;

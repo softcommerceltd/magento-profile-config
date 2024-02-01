@@ -9,7 +9,6 @@ declare(strict_types=1);
 namespace SoftCommerce\ProfileConfig\Model;
 
 use SoftCommerce\ProfileConfig\Api\Data\ConfigInterface;
-use SoftCommerce\ProfileConfig\Model\ResourceModel;
 
 /**
  * @inheritDoc
@@ -19,12 +18,12 @@ class GetProfileIdByConfigCondition implements GetProfileIdByConfigConditionInte
     /**
      * @var array
      */
-    private $data;
+    private array $data = [];
 
     /**
      * @var ResourceModel\Config
      */
-    private $resource;
+    private ResourceModel\Config $resource;
 
     /**
      * @param ResourceModel\Config $resource
