@@ -1,5 +1,8 @@
 ## Changelog
 
+### Version 1.2.11
+- **Compatibility**: Introduced support for PHP 8.3 [#2]
+
 ### Version 1.2.10
 - **Enhancement**: General codebase improvements [#3]
 

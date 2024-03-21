@@ -151,7 +151,8 @@ class AbstractConfig extends DataObject
         string $xmlPath,
         $store = null,
         string $scope = ScopeConfigInterface::SCOPE_TYPE_DEFAULT
-    ): array {
+    ): array
+    {
         if (!$data = $this->getConfig($xmlPath, $store, $scope)) {
             return [];
         }
@@ -203,9 +204,10 @@ class AbstractConfig extends DataObject
      */
     private function getIndexKey(
         string $xmlPath,
-        $store = null,
+        int|string|null $store = null,
         string $scope = ScopeConfigInterface::SCOPE_TYPE_DEFAULT
-    ): string {
+    ): string
+    {
         $store = $store ?: 0;
         $result = "{$this->getProfileId()}_{$store}_{$scope}_";
         $result .= str_replace('/', '_', trim($xmlPath));
