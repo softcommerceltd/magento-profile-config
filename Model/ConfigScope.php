@@ -303,12 +303,14 @@ class ConfigScope implements ConfigScopeInterface
             }
 
             if ($item[ConfigInterface::SCOPE] !== ScopeConfigInterface::SCOPE_TYPE_DEFAULT) {
-                $code = $this->scopeCodeResolver->resolve(
-                    $item[ConfigInterface::SCOPE],
-                    $item[ConfigInterface::SCOPE_ID]
-                );
-                $data[$item[ConfigInterface::SCOPE]][$code][$item[ConfigInterface::PATH]]
-                    = $item[ConfigInterface::VALUE];
+                try {
+                    $code = $this->scopeCodeResolver->resolve(
+                        $item[ConfigInterface::SCOPE],
+                        $item[ConfigInterface::SCOPE_ID]
+                    );
+                    $data[$item[ConfigInterface::SCOPE]][$code][$item[ConfigInterface::PATH]] = $item[ConfigInterface::VALUE];
+                } catch (\Exception) {
+                }
                 continue;
             }
 

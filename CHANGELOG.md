@@ -1,5 +1,8 @@
 ## Changelog
 
+### Version 1.2.12
+- **Compatibility**: Introduce support for Magento 2.4.7 [#4]
+
 ### Version 1.2.11
 - **Compatibility**: Introduced support for PHP 8.3 [#2]
 
