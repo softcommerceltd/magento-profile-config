@@ -60,7 +60,7 @@ class ConfigScopeWriter implements ConfigScopeWriterInterface
     {
         if (is_array($value)) {
             try {
-                $this->serializer->serialize($value);
+                $value = $this->serializer->serialize($value);
             } catch (\InvalidArgumentException $e) {
                 $value = null;
             }

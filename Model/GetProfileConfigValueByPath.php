@@ -34,10 +34,12 @@ class GetProfileConfigValueByPath implements GetProfileConfigValueByPathInterfac
     /**
      * @inheritDoc
      */
-    public function execute(string $path): array
+    public function execute(string $path, bool $isLooseComparison = false): array
     {
         if (!isset($this->data[$path])) {
-            $this->data[$path] = $this->resource->getDataByPath($path);
+            $this->data[$path] = $isLooseComparison
+                ? $this->resource->getSearchConfigByPathAlike($path)
+                : $this->resource->getDataByPath($path);
         }
 
         return $this->data[$path];

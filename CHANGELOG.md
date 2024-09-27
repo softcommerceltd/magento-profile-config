@@ -1,5 +1,8 @@
 ## Changelog
 
+### Version 1.2.13
+- **Fix**: Apply a fix where profile config scope writer saves value as array opposed to serialised data [#29]
+
 ### Version 1.2.12
 - **Compatibility**: Introduce support for Magento 2.4.7 [#4]
 
