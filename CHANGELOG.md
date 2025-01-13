@@ -1,5 +1,8 @@
 ## Changelog
 
+### Version 1.3.0
+- **Enhancement**: Included `servicepoint` type to account for `pakshop` facility.
+
 ### Version 1.2.13
 - **Fix**: Apply a fix where profile config scope writer saves value as array opposed to serialised data [#29]
 
