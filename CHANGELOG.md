@@ -7,6 +7,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.3.1] - 2025-07-14
+### Changed
+- ## softcommerce/module-profile-config [1.3.0] - **Enhancement**: Included `servicepoint` type to account for `pakshop` facility.
+- ## softcommerce/module-profile-config [1.2.13] - **Fix**: Apply a fix where profile config scope writer saves value as array opposed to serialised data [#29]
+
 ## [1.3.0] - 2024-03-13
 ### Changed
 - **Enhancement**: Included `servicepoint` type to account for `pakshop` facility.
